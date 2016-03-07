@@ -21,7 +21,8 @@ libraryDependencies ++= Seq(
   "com.datastax.spark" %% "spark-cassandra-connector" % "1.4.1" exclude("org.apache.spark", "spark-core_2.10"),
   "org.json4s" %% "json4s-jackson" % "3.2.11",
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.6.2",
-  "com.fasterxml.jackson.module" % "jackson-module-scala_2.10" % "2.6.2")
+  "com.fasterxml.jackson.module" % "jackson-module-scala_2.10" % "2.6.2",
+  "com.rockymadden.stringmetric" %% "stringmetric-core" % "0.27.3")
 
 resolvers += Resolver.mavenLocal
 

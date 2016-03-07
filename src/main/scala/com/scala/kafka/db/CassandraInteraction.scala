@@ -1,14 +1,12 @@
 package com.scala.kafka.db
 
 import com.datastax.spark.connector.cql._
-import com.scala.kafka.{MainStreamer2, MainStreamer}
-import com.scala.kafka.entity.{FinalNotification, Message}
+import com.scala.kafka.MainStreamer
+import com.scala.kafka.entity.FinalNotification
 import MainStreamer._
-import MainStreamer2.FinalNotification
 import com.typesafe.scalalogging.slf4j.LazyLogging
 import org.apache.spark.rdd._
 import com.datastax.spark.connector._
-import org.apache.spark.streaming.dstream.DStream
 
 /**
   * Yuliia Vovk

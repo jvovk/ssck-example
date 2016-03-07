@@ -1,8 +1,6 @@
 package com.scala.kafka.consumer
 
 import java.util.concurrent.{ExecutorService, Executors}
-import com.scala.kafka.Config.producer
-import com.scala.kafka.Config.producer
 import com.scala.kafka.MainConsumer
 import com.typesafe.scalalogging.slf4j.LazyLogging
 import MainConsumer._
