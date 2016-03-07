@@ -22,7 +22,8 @@ libraryDependencies ++= Seq(
   "org.json4s" %% "json4s-jackson" % "3.2.11",
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.6.2",
   "com.fasterxml.jackson.module" % "jackson-module-scala_2.10" % "2.6.2",
-  "com.rockymadden.stringmetric" %% "stringmetric-core" % "0.27.3")
+  "com.rockymadden.stringmetric" %% "stringmetric-core" % "0.27.3",
+  "com.jsuereth" % "scala-arm_2.10" % "1.4")
 
 resolvers += Resolver.mavenLocal
 

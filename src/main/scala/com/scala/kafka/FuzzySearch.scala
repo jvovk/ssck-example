@@ -1,10 +1,15 @@
 package com.scala.kafka
 
 import com.rockymadden.stringmetric.similarity.HammingMetric
-
+import scala.io.Source._
+import resource._
 import scala.collection.mutable
 
 object FuzzySearch extends Config with App {
+
+  private val textFile = "src/main/resources/data.txt"
+  private val word = "her"
+  private val fuzziness = 1
 
   case class FuzzyWord(word: String, line: Int, pos: Int)
 
@@ -35,6 +40,21 @@ object FuzzySearch extends Config with App {
     iterateList(text, 1, mutable.MutableList())
   }
 
-  val map = fuzzySearch(List("mother jer", "hem", "rer er"), "her", 1)
-  map.foreach(println)
+  def readTextFile(filename: String): Option[List[String]] = {
+    try {
+      var lines = List[String]()
+      for (source <- managed(scala.io.Source.fromFile(textFile)))
+        lines = (for (line <- source.getLines) yield line).toList
+      Some(lines)
+    }
+    catch {
+      case e: Exception => None
+    }
+  }
+
+  readTextFile(textFile) match {
+    case Some(lines) => fuzzySearch(lines, word, fuzziness).foreach(println)
+    case None => println("Couldn't read file!")
+  }
+
 }
