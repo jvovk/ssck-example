@@ -40,5 +40,4 @@ object MainProducer extends App with Config with LazyLogging {
     implicit val formats = DefaultFormats
     Serialization.write(message)
   }
-
 }
