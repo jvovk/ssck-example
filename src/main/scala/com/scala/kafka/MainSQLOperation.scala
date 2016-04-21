@@ -11,5 +11,4 @@ object MainSQLOperation extends Config with App {
   val csc = new CassandraSQLContext(sc)
 
   csc.sql(s"""SELECT * from $keyspace.${table} order by id""").show
-
 }
